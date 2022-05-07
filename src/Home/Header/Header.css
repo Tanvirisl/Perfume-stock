@@ -1,0 +1,11 @@
+.header-container{
+    padding: 10px;
+    background-color: bisque;
+    border-radius: 5px;
+}
+.header-container a{
+    color: black!important;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: serif;
+}

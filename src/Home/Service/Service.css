@@ -1,0 +1,11 @@
+.service-container img{
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+}
+.service-container{
+    width: 340px;
+    padding: 5px;
+    border: 2px solid rgb(129, 125, 125);
+    border-radius: 10px;
+}

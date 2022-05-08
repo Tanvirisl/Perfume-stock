@@ -92,14 +92,14 @@ const Register = () => {
         }
     },[user]);
     return (
-        <div>
+        <div className='login-container'>
             <div className='title'>SignUp</div>
             <form onSubmit={handleSingUpSubmit}>
-                <input onChange={handleEmail} type="email" placeholder='Your Email' /><br />
+                <input onChange={handleEmail} type="email" placeholder='Your Email' required/><br />
                 <p className='text-danger'>{error.email}</p>
-                <input onChange={handlePassword} type="Password" placeholder='Your Password' /><br />
+                <input onChange={handlePassword} type="Password" placeholder='Your Password' required/><br />
                 <p className='text-danger'>{error.password}</p>
-                <input type="password" onChange={handleConfirmPassword} placeholder='Confirm-password'/><br />
+                <input type="password" onChange={handleConfirmPassword} placeholder='Confirm-password' required/><br />
                 <p></p>
                 <button>Signup</button>
                 <h6 onClick={navigateLogin}>Login</h6>

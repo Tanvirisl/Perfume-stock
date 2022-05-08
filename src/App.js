@@ -12,6 +12,7 @@ import AddUser from './AddUser/AddUser';
 import RequreAuth from './RequereAuth/RequreAuth';
 import Notfound from './NotFound/Notfound';
 import Blog from './Blog/Blog';
+import Footer from './Footer/Footer';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='blog' element={<Blog></Blog>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
       </Routes>
+      <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
   );

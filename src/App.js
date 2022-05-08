@@ -10,6 +10,8 @@ import Inventorys from './Inventorys/Inventorys';
 import UpdateService from './UpdateService/UpdateService';
 import AddUser from './AddUser/AddUser';
 import RequreAuth from './RequereAuth/RequreAuth';
+import Notfound from './NotFound/Notfound';
+import Blog from './Blog/Blog';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         }></Route>
         <Route path='/update/:id' element={<UpdateService></UpdateService>}></Route>
         <Route path='/addItem' element={<AddUser></AddUser>}></Route>
+        <Route path='blog' element={<Blog></Blog>}></Route>
+        <Route path='*' element={<Notfound></Notfound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>

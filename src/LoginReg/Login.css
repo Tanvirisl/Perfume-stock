@@ -1,0 +1,26 @@
+.login-container{
+    width: 470px;
+    margin: auto;
+}
+.login-container input{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+}
+.title{
+    font-size: 30px;
+    justify-content: center;
+    display: grid;
+}
+.login-container button{
+    width: 100%;
+    padding: 10PX;
+    border-radius: 10PX;
+}
+.login-container h6{
+    justify-content: center;
+    display: grid;
+    color: green;
+    font-size: 20px;
+    cursor: pointer;
+}

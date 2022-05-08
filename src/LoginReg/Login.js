@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../Firebase.init';
 import { toast} from 'react-toastify';
-
+import './Login.css'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -84,7 +84,7 @@ const Login = () => {
         navigate('/register')
     }
     return (
-        <div>
+        <div className='login-container'>
             <div className='login-main-container'>
             <div className='title'>LogIn</div>
             <form onSubmit={handleLoginSubmit}>
@@ -97,7 +97,6 @@ const Login = () => {
 
             
             <h6 onClick={navigateRegister}>Please Register</h6>
-            <p>Forget Password <span style={{ cursor: "pointer" }} className='text-primary'>Reset Password</span></p>
 
         </div>
         </div>

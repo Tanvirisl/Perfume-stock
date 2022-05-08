@@ -1,0 +1,10 @@
+.addUser-container{
+   justify-content: center;
+   display:grid;
+   margin-top: 60px;
+}
+.addUser-container input{
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+}

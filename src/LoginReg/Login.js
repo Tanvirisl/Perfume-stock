@@ -4,6 +4,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../Firebase.init';
 import { toast} from 'react-toastify';
 import './Login.css'
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -93,6 +94,7 @@ const Login = () => {
                 <input onChange={handlePassword} type="Password" placeholder='Your Password' required/><br />
                 <p className='text-danger'>{error.password}</p>
                 <button>Login</button>
+                <SocialLogin></SocialLogin>
             </form>
 
             

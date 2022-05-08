@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../Firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
 
@@ -103,6 +104,7 @@ const Register = () => {
                 <p></p>
                 <button>Signup</button>
                 <h6 onClick={navigateLogin}>Login</h6>
+                <SocialLogin></SocialLogin>
             </form>
         </div>
     );

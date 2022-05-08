@@ -1,0 +1,22 @@
+.inventory-container img{
+    width: 163px;
+    height: 163px;
+    border-radius: 10px;
+}
+.inventory-container {
+    display: flex;
+    background: antiquewhite;
+    width: 1000px;
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.inventory-details{
+    padding: 0px 20px;
+}
+.inventory-details button{
+    margin: 0px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}

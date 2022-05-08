@@ -6,6 +6,9 @@ import Login from './LoginReg/Login';
 import Header from './Home/Header/Header';
 import Register from './LoginReg/Register';
 import 'react-toastify/dist/ReactToastify.css';
+import Inventorys from './Inventorys/Inventorys';
+import UpdateService from './UpdateService/UpdateService';
+import AddUser from './AddUser/AddUser';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/inventory' element={<Inventorys></Inventorys>}></Route>
+        <Route path='/update/:id' element={<UpdateService></UpdateService>}></Route>
+        <Route path='/addItem' element={<AddUser></AddUser>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>

@@ -6,6 +6,12 @@ const Service = ({service}) => {
     return (
         <div className='service-container'>
             <img src={image} alt="" />
+            <div>
+                <h6>Name:{name}</h6>
+                <h6>Quantity:{quantity}</h6>
+                <h6>Price:{price}</h6>
+                <p>{description}</p>
+            </div>
         </div>
     );
 };

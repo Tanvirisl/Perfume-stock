@@ -11,23 +11,23 @@ const Services = () => {
     const [size, setSize] = useState(6);
     const [service, setService] = useState([]);
 
-    useEffect( () =>{
+    useEffect(() => {
         fetch(`http://localhost:5000/service?page=${page}&size=${size}`)
-        .then(res => res.json())
-        .then(data => setService(data));
+            .then(res => res.json())
+            .then(data => setService(data));
     }, [page, size]);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('http://localhost:5000/productCount')
-        .then(res => res.json())
-        .then(data => {
-            const count = data.count;
-            const pages = Math.ceil(count/6)
-            setPageCount(pages)
-        })
-    },[])
+            .then(res => res.json())
+            .then(data => {
+                const count = data.count;
+                const pages = Math.ceil(count / 6)
+                setPageCount(pages)
+            })
+    }, [])
 
-    
+
     return (
         <div>
             <h2>Our Services</h2>
@@ -38,24 +38,24 @@ const Services = () => {
                         service={service}
                     ></Service>)
                 }
-                
+
             </div>
             <div className='pagination'>
-                    {
-                        [...Array(pageCount).keys()]
+                {
+                    [...Array(pageCount).keys()]
                         .map(number => <button
-                            className={page=== number ? 'selected': ''}
+                            className={page === number ? 'selected' : ''}
                             onClick={() => setPage(number)}
                         >{number + 1}</button>)
-                    }
-                    
-                    <select onChange={e => setSize(e.target.value)}>
-                        <option value="5" selected>6</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                    </select>
-                </div>
+                }
+
+                <select onChange={e => setSize(e.target.value)}>
+                    <option value="5" selected>6</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
         </div>
     );
 };

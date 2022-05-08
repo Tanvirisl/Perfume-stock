@@ -9,7 +9,7 @@ import './Header.css'
 const Header = () => {
 
     const [user] = useAuthState(auth)
-    const handleSignOut = () =>{
+    const handleSignOut = () => {
         signOut(auth)
     }
     return (
@@ -22,13 +22,17 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link href="#home" as={Link} to='/home'>Home</Nav.Link>
                             <Nav.Link href="#pricing">Pricing</Nav.Link>
-                            
+
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to='/addItem' href="#inventory">AddItem</Nav.Link>
-                            <Nav.Link as={Link} to='/inventory' href="#inventory">Inventory</Nav.Link>
                             {
-                                user ? <button onClick={handleSignOut}>SignOut</button> : <Nav.Link  href='#login' as={Link} to='/login'>Login</Nav.Link>
+                                user && <>
+                                    <Nav.Link as={Link} to='/addItem' href="#inventory">AddItem</Nav.Link>
+                                    <Nav.Link as={Link} to='/inventory' href="#inventory">Inventory</Nav.Link>
+                                </>
+                            }
+                            {
+                                user ? <button onClick={handleSignOut}>SignOut</button> : <Nav.Link href='#login' as={Link} to='/login'>Login</Nav.Link>
                             }
                         </Nav>
                     </Navbar.Collapse>

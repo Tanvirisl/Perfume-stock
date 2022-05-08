@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Inventorys from './Inventorys/Inventorys';
 import UpdateService from './UpdateService/UpdateService';
 import AddUser from './AddUser/AddUser';
+import RequreAuth from './RequereAuth/RequreAuth';
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/inventory' element={<Inventorys></Inventorys>}></Route>
+        <Route path='/inventory' element={
+          <RequreAuth>
+            <Inventorys></Inventorys>
+          </RequreAuth>
+        }></Route>
         <Route path='/update/:id' element={<UpdateService></UpdateService>}></Route>
         <Route path='/addItem' element={<AddUser></AddUser>}></Route>
       </Routes>

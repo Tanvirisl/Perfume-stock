@@ -4,6 +4,9 @@
     width: 1360px;
     margin: auto;
 }
+.pagination{
+    justify-content: center;
+}
 @media only screen and (max-width:570px) {
     .services-container{
        grid-template-columns: repeat(1, 1fr);

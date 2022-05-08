@@ -1,0 +1,28 @@
+.section-main-container{
+    margin-top: 30px;
+}
+.section-container{
+    display: flex;
+    margin-top: 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 15px;
+}
+.section-container img{
+    width: 600px;
+    border-radius: 10px;
+}
+.section-container2{
+    display: flex;
+    margin-top: 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 15px;
+}
+.section-container2 img{
+    width: 600px;
+    border-radius: 10px;
+}
+.section-details{
+    padding: 10px;
+}

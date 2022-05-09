@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from '../Firebase.init';
 import { toast} from 'react-toastify';
 import './Login.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
+import auth from '../Firebase.init';
 
 const Login = () => {
     const navigate = useNavigate();

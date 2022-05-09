@@ -8,7 +8,7 @@ const UpdateService = () => {
     const [update, setUpdate] = useState({});
 
     useEffect(() =>{
-        const url = `http://localhost:5000/service/${id}`
+        const url = `https://pure-castle-07488.herokuapp.com/service/${id}`
         fetch(url)
         .then(res => res.json())
         .then(data => setUpdate(data))
@@ -23,7 +23,7 @@ const UpdateService = () => {
 
         const update = {image, name, price, quantity, description};
 
-        fetch(`http://localhost:5000/service/${id}`,{
+        fetch(`https://pure-castle-07488.herokuapp.com/service/${id}`,{
             method: 'PUT',
             headers:{
                 'content-type' : 'application/json'

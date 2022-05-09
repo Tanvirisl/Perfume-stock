@@ -12,13 +12,13 @@ const Services = () => {
     const [service, setService] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/service?page=${page}&size=${size}`)
+        fetch(`https://pure-castle-07488.herokuapp.com/service?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => setService(data));
     }, [page, size]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/productCount')
+        fetch('https://pure-castle-07488.herokuapp.com/productCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;

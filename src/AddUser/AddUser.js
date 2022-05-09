@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import './AddUser.css'
 const AddUser = () => {
     const navigate = useNavigate()
-    const handleUpdate = (e) =>{
+    const handleUpdate = (e) => {
         e.preventDefault();
         const image = e.target.image.value;
         const name = e.target.name.value;
@@ -12,26 +12,26 @@ const AddUser = () => {
         const quantity = e.target.quantity.value;
         const suppler = e.target.suppler.value;
 
-        const addItem = {image, name, price, quantity, suppler};
+        const addItem = { image, name, price, quantity, suppler };
 
-        fetch('http://localhost:5000/service',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        fetch('https://pure-castle-07488.herokuapp.com/service', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(addItem)
+            body: JSON.stringify(addItem)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log('success', data)
-            toast('Add Items Success')
-            navigate('/inventory')
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data)
+                toast('Add Items Success')
+                navigate('/inventory')
+            })
     }
     return (
         <div>
-             <form className='addUser-container' onSubmit={handleUpdate}>
-                <input placeholder='url'name='image' type="text" /><br />
+            <form className='addUser-container' onSubmit={handleUpdate}>
+                <input placeholder='url' name='image' type="text" /><br />
                 <input placeholder='name' name='name' type="text" /><br />
                 <input placeholder='price' name='price' type="text" /><br />
                 <input placeholder='quantity' name='quantity' type="text" /><br />

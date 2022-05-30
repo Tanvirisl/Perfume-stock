@@ -1,0 +1,21 @@
+[debug] [2022-05-30T16:44:29.732Z] ----------------------------------------------------------------------
+[debug] [2022-05-30T16:44:29.734Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\DELL\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-05-30T16:44:29.735Z] CLI Version:   10.8.0
+[debug] [2022-05-30T16:44:29.735Z] Platform:      win32
+[debug] [2022-05-30T16:44:29.735Z] Node Version:  v16.14.0
+[debug] [2022-05-30T16:44:29.747Z] Time:          Mon May 30 2022 22:44:29 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-05-30T16:44:29.747Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-30T16:44:29.820Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-30T16:44:29.821Z] > authorizing via signed-in user (himonislamfre@gmail.com)
+[debug] [2022-05-30T16:44:29.821Z] [iam] checking project assignment-11-91407 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-30T16:44:29.824Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignment-11-91407:testIamPermissions [none]
+[debug] [2022-05-30T16:44:29.824Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignment-11-91407:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-30T16:44:29.877Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/assignment-11-91407:testIamPermissions
+[debug] [2022-05-30T16:44:29.878Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/assignment-11-91407 [none]
+[debug] [2022-05-30T16:44:29.883Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/assignment-11-91407
+[debug] [2022-05-30T16:44:29.889Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/assignment-11-91407
+    at RetryOperation._fn (C:\Users\DELL\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:240:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project assignment-11-91407. Please make sure the project exists and your account has permission to access it.

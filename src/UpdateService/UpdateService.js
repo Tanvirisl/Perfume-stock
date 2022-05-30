@@ -8,7 +8,7 @@ const UpdateService = () => {
     const {name, image, price, quantity} = update;
 
     useEffect(() => {
-        const url = `http://localhost:5000/service/${id}`
+        const url = `https://pure-castle-07488.herokuapp.com/service/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setUpdate(data))
@@ -22,7 +22,7 @@ const UpdateService = () => {
         const newProduct = {quantity : AddQuantity}
         // const update = {quantity};
 
-        fetch(`http://localhost:5000/service/${id}`, {
+        fetch(`https://pure-castle-07488.herokuapp.com/service/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -43,7 +43,7 @@ const UpdateService = () => {
         const newProduct = {quantity : newQuantity};
         setUpdate(newProduct);
         if(newQuantity > -1){
-            fetch(`http://localhost:5000/service/${id}`,{
+            fetch(`https://pure-castle-07488.herokuapp.com/service/${id}`,{
                 method:"PUT",
                 headers:{
                     'content-type': 'application/json'

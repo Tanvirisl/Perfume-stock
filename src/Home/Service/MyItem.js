@@ -5,7 +5,7 @@ const MyItem = () => {
     const [myItem, setMyItem] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/getService', {
+        fetch('https://pure-castle-07488.herokuapp.com/getService', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'

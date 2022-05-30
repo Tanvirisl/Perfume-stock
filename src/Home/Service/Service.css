@@ -10,3 +10,12 @@
     border-radius: 10px;
     margin-bottom: 30px;
 }
+.button{
+    width: 100%;
+    background-color: aquamarine;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: sans-serif;
+}

@@ -1,53 +1,82 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import './UpdateService.css'
 const UpdateService = () => {
-    const {id} = useParams()
-
+    const { id } = useParams();
     const [update, setUpdate] = useState({});
+    const {name, image, price, quantity} = update;
 
-    useEffect(() =>{
-        const url = `https://pure-castle-07488.herokuapp.com/service/${id}`
+    useEffect(() => {
+        const url = `http://localhost:5000/service/${id}`
         fetch(url)
-        .then(res => res.json())
-        .then(data => setUpdate(data))
-    },[])
-    const handleUpdate =(e)=>{
+            .then(res => res.json())
+            .then(data => setUpdate(data))
+    }, [id])
+    const handleUpdate = (e) => {
         e.preventDefault()
-        const image = e.target.image.value;
-        const name = e.target.name.value;
-        const price = e.target.price.value;
         const quantity = e.target.quantity.value;
-        const description = e.target.description.value;
+        const newQuantity = parseInt(quantity);
+        const oldQuantity = parseInt(update.quantity);
+        const AddQuantity = oldQuantity + newQuantity;
+        const newProduct = {quantity : AddQuantity}
+        // const update = {quantity};
 
-        const update = {image, name, price, quantity, description};
-
-        fetch(`https://pure-castle-07488.herokuapp.com/service/${id}`,{
+        fetch(`http://localhost:5000/service/${id}`, {
             method: 'PUT',
-            headers:{
-                'content-type' : 'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
-            body: JSON.stringify(update)
+            body: JSON.stringify(newProduct)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log('success', data)
-            toast('user Update success')
-            // e.target.reset()
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data)
+                toast('user Update success')
+                // e.target.reset()
+            })
+    }
+    const handleQuantity = (e) => {
+
+        const quantity =update.quantity;
+        let newQuantity = quantity - 1;
+        const newProduct = {quantity : newQuantity};
+        setUpdate(newProduct);
+        if(newQuantity > -1){
+            fetch(`http://localhost:5000/service/${id}`,{
+                method:"PUT",
+                headers:{
+                    'content-type': 'application/json'
+                },
+                body:JSON.stringify(newProduct),
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+        }
+
     }
     return (
-        <div>
-            <h2>update service : {update.name}</h2>
-            <form onSubmit={handleUpdate}>
-                <input placeholder='url' name='image' required type="text" /><br />
-                <input placeholder='name' name='name' required type="text" /><br />
-                <input placeholder='price' name='price'required type="text" /><br />
-                <input placeholder='quantity' name='quantity' required type="text" /><br />
-                <input placeholder='description' name='description' required type="text" /><br />
-                <input type="submit" value='Update-User' />
-            </form>
+        <div className='update-container'>
+
+            <div className='update-form'>
+                <div className='update-info'>
+                    <div>
+                        <div className='Inventory-container'>
+                            <img src={image} alt="" />
+                        </div>
+                        <div>
+                            <h4>Name : {name}</h4>
+                            <h4>Price : {price}</h4>
+                            <h4>Quantity : {quantity}</h4>
+                        </div>
+                        <button onClick={handleQuantity} className='button'>Delivered</button>
+                    </div>
+                </div>
+                <form onSubmit={handleUpdate}>
+                    <input placeholder='quantity' name='quantity' type="text" /><br />
+                    <input className='' type="submit" value='Update' />
+                </form>
+            </div>
         </div>
     );
 };

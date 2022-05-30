@@ -25,19 +25,19 @@ const AddUser = () => {
             .then(data => {
                 console.log('success', data)
                 toast('Add Items Success')
-                navigate('/inventory')
+                navigate('/')
             })
     }
     return (
         <div>
             <form className='addUser-container' onSubmit={handleUpdate}>
-                <input placeholder='url' name='image' type="text" /><br />
-                <input placeholder='name' name='name' type="text" /><br />
-                <input placeholder='price' name='price' type="text" /><br />
-                <input placeholder='quantity' name='quantity' type="text" /><br />
-                <input placeholder='description' name='description' type="text" /><br />
-                <input placeholder='suppler_name' name='suppler' type="text" /><br />
-                <input type="submit" value='Add-User' />
+                <input placeholder='url' name='image' type="text" required/><br />
+                <input placeholder='name' name='name' type="text" required/><br />
+                <input placeholder='price' name='price' type="text" required/><br />
+                <input placeholder='quantity' name='quantity' type="text" required/><br />
+                <input placeholder='description' name='description' type="text" required/><br />
+                <input placeholder='suppler_name' name='suppler' type="text" required/><br />
+                <input type="submit" value='Add-Item' />
             </form>
         </div>
     );

@@ -1,0 +1,25 @@
+.update-container{
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    align-items: center;
+    
+}
+.update-form{
+    display: flex;
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 1px;
+    gap: 20px;
+}
+.update-form input{
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 300px;
+    
+}
+.update-info{
+    width: 300px;
+}

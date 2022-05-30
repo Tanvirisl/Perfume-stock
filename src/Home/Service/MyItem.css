@@ -1,0 +1,15 @@
+.myDetails-Container{
+    display: flex;
+}
+.mainDetails-container{
+    width: 800px;
+    margin: auto;
+    background-color: antiquewhite;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.myItem-image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
